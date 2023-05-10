@@ -72,7 +72,6 @@ const Home: NextPage = () => {
     } catch (error) {
       console.error(error);
       alert("RPC Error. Please submit values again");
-      // Handle the error here. For example, you could show an error message to the user.
     }
   };
 
