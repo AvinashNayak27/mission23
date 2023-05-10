@@ -62,17 +62,20 @@ const Home: NextPage = () => {
 
   const handleVerification = (e: any) => {
     e.preventDefault();
-    // convert data to int from hex 
-    // if (amountDue > amountPaid) {
-    //   alert("Amount Paid must be greater than Amount Due")
-    //   return
-    // }
-
-    const dataInt = data?.map((x: any) => parseInt(x._hex, 16));
-    console.log(dataInt);
-    setcoins(dataInt)
-
+    try {
+      if (!data) {
+        throw new Error('Data is undefined');
+      }
+      const dataInt = data.map((x: any) => parseInt(x._hex, 16));
+      console.log(dataInt);
+      setcoins(dataInt);
+    } catch (error) {
+      console.error(error);
+      alert("RPC Error. Please submit values again");
+      // Handle the error here. For example, you could show an error message to the user.
+    }
   };
+
   function getCoinName(index: number) {
     switch (index) {
       case 0:
