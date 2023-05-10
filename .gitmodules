@@ -1,0 +1,3 @@
+[submodule "zkcircuit"]
+	path = zkcircuit
+	url = https://github.com/AvinashNayak27/zkcircuit
