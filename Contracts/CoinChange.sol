@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.0;
 
-contract ChangeCalculator {
+contract CoinChange {
     function changeReturn(uint256 amountDue, uint256 amountPaid) public pure returns (uint256[] memory) {
         // Calculate the change due
         uint256 changeDue = amountPaid - amountDue;
